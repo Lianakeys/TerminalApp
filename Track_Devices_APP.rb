@@ -5,7 +5,7 @@ require 'date'
 
 # Log in to app
 def start_of_app()
-    puts "Welcome to your device tracking app! \n Press 'Y' for new users to initialize or 'N' if you are an existing user."
+    puts "Welcome to your device tracking app! \n Press 'Y' for new users to initialize new list or 'N' if you are an existing user."
     start_input = gets.chomp.strip.downcase
    
     while start_input != "y" && start_input != 'n'
