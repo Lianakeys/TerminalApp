@@ -23,7 +23,7 @@ def start_of_app()
     end
     elsif start_input == 'n'
         puts "Thanks for using, see you next time"
-    end
+    end 
 end 
 
 def show_list_of_devices()
