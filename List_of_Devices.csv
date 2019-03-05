@@ -1,3 +1,3 @@
-appliance_type,location,date_of_purchase,end_of_warranty,serial_number
-popcorn,movie,1990-10-11,12,13985612395
-ofs,oasd,1998-01-02,10,129847jf
+appliance_type,location,date_of_purchase,end_of_warranty,serial_number,faulty_devices
+washing machine,back,1996-06-11,100,930840298409
+fdh,dhgf,1996-10-02,19,239487sjdfh

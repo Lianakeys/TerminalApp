@@ -5,7 +5,7 @@ require 'date'
 
 # Log in to app
 def start_of_app()
-    puts "Welcome to your device tracking app! \n Press 'Y' for new users to initialize or 'N' if you are an existing user."
+    puts "Welcome to your device tracking app! \n Press 'Y' for new users to initialize new list or 'N' if you are an existing user."
     start_input = gets.chomp.strip.downcase
    
     while start_input != "y" && start_input != 'n'
@@ -16,14 +16,14 @@ def start_of_app()
     #Once user enters Y. Add header in List_of_Devices
     if start_input == "y"
     CSV.open('List_of_Devices.csv', "a") do |csv|
-        csv << [:appliance_type, :location, :date_of_purchase, :end_of_warranty, :serial_number]   
+        csv << [:appliance_type, :location, :date_of_purchase, :end_of_warranty, :serial_number, :faulty_devices]  
     end
     CSV.open('Faulty_Devices.csv', "a") do |csv|
-        csv << [:appliance_type, :location, :date_of_purchase, :end_of_warranty, :serial_number]   
+        csv << [:appliance_type, :location, :date_of_purchase, :end_of_warranty, :serial_number, :faulty_devicess]   
     end
     elsif start_input == 'n'
         puts "Thanks for using, see you next time"
-    end
+    end 
 end 
 
 def show_list_of_devices()
@@ -38,26 +38,25 @@ def show_list_of_devices()
     end
 end
 
-def show_faulty_devices()
-    CSV.foreach('Faulty_Devices.csv', headers: true,header_converters: :symbol) do |row|
-        appliance_type = row[:Appliance_Type]
-        location = row[:Location]
-        date_of_purchase = row[:Date_of_Purchase]
-        end_of_warranty = row[:End_of_Warranty]
-        serial_number = row[:Serial_Number]
-        puts "#{appliance_type}, #{location}, #{date_of_purchase}, #{end_of_warranty}, #{serial_number}"
-    end
-end
+
+
+
+# def show_warranty_status()
+#     
+# end
 
 def options()
-    puts "What would you like to do? \n Press 1 for Device List \n Press 2 for Adding New Device \n Press 3 for Faulty Devices"
+    puts "What would you like to do? \n Press 1 for Device List \n Press 2 for Adding New Device \n Press 3 for Warranty Status Report"
     option_input = gets.chomp.strip.to_i
         while option_input != 1 && option_input != 2 && option_input != 3
-            puts "What would you like to do? \n Press 1 for Device List \n Press 2 for Adding New Device \n Press 3 for Faulty Devices"
+            puts "What would you like to do? \n Press 1 for Device List \n Press 2 for Adding New Device \n Press 3 for Warranty Status Report"
             option_input = gets.chomp.strip
         end
+    while option_input != 4
     if option_input == 1
         show_list_of_devices()
+        puts "What would you like to do? \n Press 1 for Device List \n Press 2 for Adding New Device \n Press 3 for Warranty Status Report. Press 4 to exit."
+        option_input = gets().chomp.strip.to_i
     elsif option_input == 2
         puts "What type of appliance is your device?"
         device_type_input = gets().chomp.strip
@@ -75,9 +74,20 @@ def options()
         puts "What is your device's Warranty Serial Number?"
         serial_number_input = gets().chomp.strip
         Appliances.new(device_type_input,location_input,purchase_date_input,warranty_length_input,serial_number_input).add_new_device()
+        puts "New Appliance Added. \n #{device_type_input} in #{location_input} purchased on #{purchase_date_input} with warranty number #{serial_number_input} of #{warranty_length_input} years."
+        puts "Would you like to add another device? Press 2 for yes. Press 1 to Device List. Press 3 for Warranty Status Report. Press 4 to exit."
+        option_input = gets().chomp.strip.to_i
     elsif option_input == 3
-        show_faulty_devices()
+   
+        
+#####
+
+
+    else
+        puts "Error. Please enter a valid option."
     end
+    end
+    puts "Thank you for using our app!"
 end
 
 class Appliances
@@ -89,11 +99,9 @@ class Appliances
         @serial = serial_no
     end
 
-    def description()
-        return "#{@type} in #{@location}, bought on #{@DOP}, with warranty #{@serial} ending #{EOW}"
-    end
-
-  
+    # def description()
+    #     return "#{@type} in #{@location}, bought on #{@DOP}, with warranty #{@serial} ending #{EOW}"
+    # end
 
     def add_new_device()
         CSV.open('List_of_Devices.csv', "a+") do |csv|
@@ -102,6 +110,8 @@ class Appliances
     end
 end
 
+
+
 start_of_app()
+
 options()
-show_list_of_devices()
