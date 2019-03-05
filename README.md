@@ -1,17 +1,41 @@
-App name = Track Device App
+App name = Track Device App 
 
-Aim = Keep track of all the devices one owns (quantity and quality of device. Eg when open the app, it'll show all information of the devices in the app and makes sorting things easier ie warranty expiry)
+Aim = Keep track of all the devices one owns (quantity and quality of device. Eg when open the app, it'll show all information of the devices in the app and makes sorting things easier ie display warranty serial no, purchase date, etc.)
 
-Solve real world problem = We have too many devices to keep track of all of them. This app will provide a clear and detailed info necessary. Eg when shopping, able to know what devices owned, the warranty date, status (faulty or not) and amount of years owned/used.
+Solve real world problems = We have too many devices to keep track all at the same time. This app will provide a clear and detailed info and can be viewed conveniently when necessary. Eg when shopping, able to know what devices are currently owned, the warranty date, status.
 
-Method of coding = 
-1. Creation of appliances   
-    use class, file CSV, method
-2. Interaction with App
-use gets and puts to access the info of devices
+what we did :
+1. Created a class to initialize devices information
+   attributes are appliance_type, location the device is found in the house,the date of purchase , and the warranty length(in years), and serial no.
+2. New method under the class called add_new_device
+   we used csv to append new row of new appliance into csv file
+3. Made a method to log in to app called start_of_app
+   ask for username and input(for whether is the user an existing user)
+4. If it's a new user, add a header into list of device file
+   using the csv.open method 
+   also an error prevention check to ensure if the input is valid
+
+   If not a new user, user can choose from the option list without adding another header
+
+5. We defined a method to show the CSV file list called show_list_of_devices
+    we use CSV.foreach to pull out information according to the header
+    we managed to combine the use of .with_index with the foreach to get row number from CSV file
+6. We defined another method to allow users to interact with the app
+    user gets to choose between options
+    as well as the error prevention check to ensure if the input is valid
     a) view status
+        call the show_list_of_device method here to prints out the devices list to screen
     b) add new device
-    c) warranty report **
+        ask the question regarding the attributes in the appliance class and we initialize and store the user inputs into a Appliances.new and we added the add_new_device method to append it into the CSV file.
+    c) warranty report 
+    d) to exit app
+        we used a while loop around the selection of options to continue asking the user for an input until they decide to exit.
+
+extra fancy stuffs
+1.  used 100.times {print "-"} method to separate the inputs and code that prints to screen for ease of viewing
+2. use gem to colourize waranty dates that are expired
+
+
 3. Further ideas 
 - on/off devices using the app
 - set desired temp (eg. oven, aircon)
@@ -19,6 +43,7 @@ use gets and puts to access the info of devices
 - if any device > x years, will display and alert to change ASAP(title , shopping needed!)
 - For different houses, can initialize diff
 - Take pic of warranty paper and store in App(To avoid losing the paper)
+- shows a list of faulty devices (allows user to change their working status of the device)
 
 
 Testing the code = 
@@ -26,6 +51,9 @@ if else,
 edge case
 puts pry
 !=
+we used binding.pry to check that the symbols need to be consistent and if coersion is needed, and the header requires a symbol converter
+while loop testing using the negative statement !=
+use if else
 
 
 Problems :
@@ -44,9 +72,12 @@ ask user what they want to do
 if user press 1, 
 1. view status
  - they are able to view a list of devices and their current endofwarenty etc
- - able to enter 
+ - able to enter their list of device file to view all the details of his device
 2. add new device
+- add newly purchased devices, key in details one by one
+- store into the csv
 3. warranty report( how many warranty days left)
+- show how many days left
 
 
 
