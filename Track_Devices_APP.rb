@@ -87,7 +87,7 @@ def options()
                         purchase_date_day_input = gets().chomp.strip.to_i
                         purchase_date_input = Date.new(purchase_date_year_input,purchase_date_month_input,purchase_date_day_input)
                         puts "How long is your device's warranty? (in years)"
-                        warranty_length_input = gets.chomp.strip
+                        warranty_length_input = gets.chomp.strip.to_i
                         puts "What is your device's Warranty Serial Number?"
                         serial_number_input = gets().chomp.strip
                         Appliances.new(device_type_input,location_input,purchase_date_input,warranty_length_input,serial_number_input).add_new_device()
@@ -96,7 +96,7 @@ def options()
                         puts "\nWould you like to add another device? \nPress 2 for yes.\nPress 1 to go back and view device list.\nPress 3 for Warranty Status Report.\nPress 4 to exit."
                         option_input = gets().chomp.strip.to_i
                     elsif option_input == 3
-                        warranty_end_date = purchase_date_input + warranty_length_input
+                        warranty_end_date = purchase_date_input - warranty_length_input
                         puts warranty_end_date
                     elsif option_input == 4
                         puts "Thank you for using our app!"
