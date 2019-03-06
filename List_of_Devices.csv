@@ -1,4 +1,13 @@
+<<<<<<< HEAD
 appliance_type,location,date_of_purchase,warranty_length,serial_number
 oven,kitchen,2010-12-28,20,23487sdagf
 handphone,mybody,2007-05-27,9,34197sdf
 oli,ok,2017-05-17,9,1234345sdf
+=======
+appliance_type,location,date_of_purchase,end_of_warranty,serial_number,faulty_devices
+washing machine,back,1996-06-11,100,930840298409
+oven,koko,1998-04-05,80,235498fs
+koko,lli,1887-05-06,7,123sdsf
+lala,koko,1998-02-04,7,12037hw
+电视机,客厅,1990-01-21,4,!@$HERHEHEH
+>>>>>>> 0353d487b15098329b4cfdc5f60a683ae5730b3b
