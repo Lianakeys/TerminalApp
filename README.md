@@ -84,11 +84,30 @@ Testing the code =
 
 Screenshots = 
 
-slack
-
-
+![Day1 Github creating repository](https://raw.githubusercontent.com/Lianakeys/TerminalApp/master/Screen%20Shot%202019-03-05%20at%203.52.02%20pm.png)
+![Day1 Trello planning work to do](https://raw.githubusercontent.com/Lianakeys/TerminalApp/master/Screen%20Shot%202019-03-05%20at%208.03.57%20pm.png)
+![Day2 Trello checking what else to do](https://raw.githubusercontent.com/Lianakeys/TerminalApp/master/Screen%20Shot%202019-03-05%20at%208.06.13%20pm.png)
+![Day1 Slack collaborating](https://raw.githubusercontent.com/Lianakeys/TerminalApp/master/Screen%20Shot%202019-03-06%20at%205.51.30%20pm.png)
+![Day2 Trello collaborating](https://raw.githubusercontent.com/Lianakeys/TerminalApp/master/Screen%20Shot%202019-03-06%20at%205.56.36%20pm.png)
+![Day2 Github list of pull requests](https://raw.githubusercontent.com/Lianakeys/TerminalApp/master/Screen%20Shot%202019-03-06%20at%206.06.03%20pm.png)
 
 Details of design & planning process :
 a) PIC
-b) diagram/workflow
-c) trello pic
+![Brainstorm pic 1](https://raw.githubusercontent.com/Lianakeys/TerminalApp/master/Brainstormpic1.jpg)
+![Brainstorm pic 2](https://raw.githubusercontent.com/Lianakeys/TerminalApp/master/Brainstormpic2.jpg)
+![Brainstorm pic 3](https://raw.githubusercontent.com/Lianakeys/TerminalApp/master/Brainstormpic3.jpg)
+
+b) diagram/workflow : 
+
+
+
+c) project plan & timeline :
+
+
+
+
+
+c) screenshots of trello boards : 
+![Day1 Trello planning work to do](https://raw.githubusercontent.com/Lianakeys/TerminalApp/master/Screen%20Shot%202019-03-05%20at%208.03.57%20pm.png)
+![Day2 Trello checking what else to do](https://raw.githubusercontent.com/Lianakeys/TerminalApp/master/Screen%20Shot%202019-03-05%20at%208.06.13%20pm.png)
+![Day2 Trello collaborating](https://raw.githubusercontent.com/Lianakeys/TerminalApp/master/Screen%20Shot%202019-03-06%20at%205.56.36%20pm.png)
