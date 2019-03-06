@@ -99,15 +99,9 @@ a) PIC
 
 b) diagram/workflow : 
 
+https://github.com/Lianakeys/TerminalApp/blob/master/diagram%20work%20flow.pdf
 
-
-c) project plan & timeline :
-
-
-
-
-
-c) screenshots of trello boards : 
+c) project plan & timeline && screenshots of trello boards : 
 ![Day1 Trello planning work to do](https://raw.githubusercontent.com/Lianakeys/TerminalApp/master/Screen%20Shot%202019-03-05%20at%208.03.57%20pm.png)
 ![Day2 Trello checking what else to do](https://raw.githubusercontent.com/Lianakeys/TerminalApp/master/Screen%20Shot%202019-03-05%20at%208.06.13%20pm.png)
 ![Day2 Trello collaborating](https://raw.githubusercontent.com/Lianakeys/TerminalApp/master/Screen%20Shot%202019-03-06%20at%205.56.36%20pm.png)
