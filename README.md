@@ -1,6 +1,6 @@
 App name = Track Device App 
 
-Aim = Keep track of all the devices one owns (quantity and quality of device. Eg when open the app, it'll show all information of the devices in the app and makes sorting things easier ie display warranty serial no, purchase date, etc.)
+Aim = Keep track of all the devices one owns (quantity and quality of device. Eg when user opens the app, it'll show all information of the devices in the app and makes sorting things easier ie display warranty serial no, purchase date, and how many days left till warranty expires etc.)
 
 Solve real world problems = We have too many devices to keep track all at the same time. This app will provide a clear and detailed info and can be viewed conveniently when necessary. Eg when shopping, able to know what devices are currently owned, the warranty date, status.
 
@@ -10,7 +10,7 @@ what we did :
 2. New method under the class called add_new_device
    we used csv to append new row of new appliance into csv file
 3. Made a method to log in to app called start_of_app
-   ask for username and input(for whether is the user an existing user)
+   ask for username and input(for whether is the user an existing user or not)
 4. If it's a new user, add a header into list of device file
    using the csv.open method 
    also an error prevention check to ensure if the input is valid
@@ -28,11 +28,14 @@ what we did :
     b) add new device
         ask the question regarding the attributes in the appliance class and we initialize and store the user inputs into a Appliances.new and we added the add_new_device method to append it into the CSV file.
     c) warranty report 
+        allows user to input the device they would like to see the warranty days left
+        we called the calc_warranty_of_devices method and store into a variable array to access it 
+        using the accessed variables, we calculated the warranty days left from today's date for the specific device and puts it to screen 
     d) to exit app
         we used a while loop around the selection of options to continue asking the user for an input until they decide to exit.
 
 extra fancy stuffs
-1.  used 100.times {print "-"} method to separate the inputs and code that prints to screen for ease of viewing
+1. used 100.times {print "-"} method to separate the inputs and code that prints to screen for ease of viewing
 2. use gem to colourize waranty dates that are expired
 
 
