@@ -46,25 +46,29 @@ def show_list_of_devices()
     puts()
 end
 
-def calc_warranty_of_devices()
-       
-       CSV.foreach('List_of_Devices.csv', headers: true, header_converters: :symbol).with_index(1) do |row, ln|
-    
+def calc_warranty_of_devices(product_name)
+    details =[]
+    CSV.foreach('List_of_Devices.csv', headers: true, header_converters: :symbol).with_index(1) do |row, ln|
+        
         appliance_type = row[:appliance_type]
-        location = row[:location]
-        date_of_purchase = row[:date_of_purchase]
-        warranty_length = row[:warranty_length]
-        serial_number = row[:serial_number]
-        puts "#{ln} #{appliance_type}, #{location}, #{date_of_purchase}, #{warranty_length}, #{serial_number}".colorize(:cyan)
-        return [appliance_type, location, date_of_purchase, warranty_length, serial_number]
+        if product_name == appliance_type
+            location = row[:location]
+            date_of_purchase = row[:date_of_purchase]
+            warranty_length = row[:warranty_length]
+            serial_number = row[:serial_number]
+            puts "#{ln} #{appliance_type}, #{location}, #{date_of_purchase}, #{warranty_length}, #{serial_number}".colorize(:cyan)
+            return details = [appliance_type, location, date_of_purchase, warranty_length, serial_number]
+        else()
+        end    
     end
-    100.times {print "-"}
-    puts()
-
+    
+    if details == []
+        puts "That does not exist, please try again"
+    end
+    # 100.times {print "-"}
+    # puts()
+    details
 end
-
-
-
 
 
 def options()
@@ -113,7 +117,13 @@ def options()
                     elsif option_input == 3
                         puts "Which product would you like to check?".colorize(:blue)
                         product_check_input = gets().chomp
-                        product_details = calc_warranty_of_devices
+                        product_details = calc_warranty_of_devices(product_check_input)
+                        
+                        while product_details == []
+                            puts "Which product would you like to check?".colorize(:blue)
+                            product_check_input = gets().chomp.strip
+                            product_details = calc_warranty_of_devices(product_check_input)
+                        end
                         purchase_date_calc = Date.parse(product_details[2])
                         warranty_length_calc = product_details[3].to_i * 365
                         warranty_end_date = purchase_date_calc + warranty_length_calc
